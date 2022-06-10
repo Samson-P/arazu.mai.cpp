@@ -1,0 +1,118 @@
+#include "pch.h"
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+const int w = 20, h = 20;
+int x, y;
+bool gameover = 0;
+
+
+enum ch_armor {  };
+enum ch_class { vfu,  };
+enum ch_gender { MAILE = 0, FEMAILE };
+enum ch_race { HUMAN = 0, ELF, DWARF };
+enum ch_movement { STOP = 0, LEVT, RIGHT, DOWN, UP };
+char movement;
+
+void setup()
+{
+	gameover = 0;
+	x = rand() % w;
+	y = rand() % h;
+}
+
+void input()
+{
+	if (_kbhit())
+	{
+
+		switch (_getch())
+		{
+		case 'w':
+		{
+			if (x < w) {
+				y = y - 1;
+				
+			}
+			break;
+		}
+		case 'a':
+		{
+			if (x > 1) {
+				x = x - 1;
+				
+			}
+			break;
+		}
+		case 's':
+		{
+			if (y < h) {
+				y = y + 1;
+				
+			}
+			break;
+		}
+		case 'd':
+		{
+			if (x < w) {
+				x = x + 1;
+				
+			}
+			break;
+			
+		}
+		case 'x':
+		{
+			gameover = 0;
+			break;
+		}
+		}
+	}
+}
+
+void logic()
+{
+
+}
+
+void map()
+{
+	for (int i = 1; i < h+2; ++i) {
+		cout << "H";
+	}
+
+	cout << endl;
+
+	for (int i = 1; i < w; ++i) {
+		cout << "H";
+
+		for (int j = 1; j < h; ++j) {
+			if (x == i and y == j) {
+				cout << "o";
+			}
+			else {
+				cout << " ";
+			}
+
+		}
+		cout << "H" << endl;
+	}
+
+	for (int i = 1; i < h+2; ++i) {
+		cout << "H";
+	}
+}
+
+
+
+int main()
+{
+	setup();
+	while (!gameover)
+	{
+		system("cls");
+		input();
+		map();
+	}
+}
