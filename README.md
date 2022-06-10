@@ -1,0 +1,2 @@
+# arazu
+ terminal rpg game
