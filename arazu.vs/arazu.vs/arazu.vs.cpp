@@ -10,10 +10,6 @@ using namespace std;
 //face - триггер обработки данных меню игрового процесса
 
 
-
-
-
-
 int hd, wd, hdm, wdm; // динамические высота и ширина карт игры и окна меню
 int hi, wi; // размеры картинки
 const int rad = 15; //сделать так,чтоб в настройках можно было немного изменять
@@ -34,7 +30,9 @@ int sizemdm = 0;
 bool Interfaceio[50];//был ли когда-нибудь ткрыт тот или инной интерфейс "interface is open?" Interfaceio[ipmenue]
 
 
-enum jojo { menue, game, pause, ima };
+enum jojo {
+	menue, game, pause, ima
+	};
 char jojo;
 enum ch_movement { STOP = 0, LEVT, RIGHT, DOWN, UP, ENTER };
 char movement;
@@ -256,14 +254,15 @@ struct CH_GLOBAL {
 CH_GLOBAL global;
 
 void Userchange() {
-	if (USER._expirience >= USER._expiriencecap) {
-		 USER._level++;
-		 USER._expiriencecap= USER._level * USER._expiriencecap / 1.5;
-		 USER._ap = USER._ap + 25 * USER._level;
-		 USER._expirience = 0;
-		 USER._mp = USER._mp + 10 * USER._level;
-		 USER._maxhealth = USER._maxhealth + 50 * USER._level;
-		 USER.health = USER._maxhealth;
+	if (
+		USER._expirience >= USER._expiriencecap) {
+			USER._level++;
+			USER._expiriencecap= USER._level * USER._expiriencecap / 1.5;
+			USER._ap = USER._ap + 25 * USER._level;
+			USER._expirience = 0;
+			USER._mp = USER._mp + 10 * USER._level;
+			USER._maxhealth = USER._maxhealth + 50 * USER._level;
+			USER.health = USER._maxhealth;
 	}
 }
 
@@ -274,31 +273,31 @@ void Menueroom(int ie, LAYER Layer) {
 		switch (ie)//инициализация адреса карты ipmenue - pmenu = ie:)
 		{
 		case 1:
-			mroom = "C:\\Users\\samson\\Documents\\GitHub\\arazu\\arazu.vs\\arazu.vs\\menues\\GLOBAL.txt";// потом можно создать доп. переменную для адресов менюшек
+			mroom = "D:\\Users\\samsonp\\Documents\\GitHub\\arazu.mai.cpp\\arazu.vs\\arazu.vs\\menues\\GLOBAL.txt";// потом можно создать доп. переменную для адресов менюшек
 			break;// чтобы глаза room не мазолил
 		case 2:
-			mroom = "C:\\Users\\samson\\Documents\\GitHub\\arazu\\arazu.vs\\arazu.vs\\menues\\11\\SETINGS.txt";
+			mroom = "D:\\Users\\samsonp\\Documents\\GitHub\\arazu.mai.cpp\\arazu.vs\\arazu.vs\\menues\\11\\SETINGS.txt";
 			break;
 		case 3:
-			mroom = "C:\\Users\\samson\\Documents\\GitHub\\arazu\\arazu.vs\\arazu.vs\\menues\\11\\CHARACTER.txt";
+			mroom = "D:\\Users\\samsonp\\Documents\\GitHub\\arazu.mai.cpp\\arazu.vs\\arazu.vs\\menues\\11\\CHARACTER.txt";
 			break;
 		case 4:
-			mroom = "C:\\Users\\samson\\Documents\\GitHub\\arazu\\arazu.vs\\arazu.vs\\menues\\11\\MAINMENUE.txt";
+			mroom = "D:\\Users\\samsonp\\Documents\\GitHub\\arazu.mai.cpp\\arazu.vs\\arazu.vs\\menues\\11\\MAINMENUE.txt";
 			break;
 		case 5:
-			mroom = "C:\\Users\\samson\\Documents\\GitHub\\arazu\\arazu.vs\\arazu.vs\\menues\\11\\12\\DIFFICULT.txt";
+			mroom = "D:\\Users\\samsonp\\Documents\\GitHub\\arazu.mai.cpp\\arazu.vs\\arazu.vs\\menues\\11\\12\\DIFFICULT.txt";
 			break;
 		case 6:
-			mroom = "C:\\Users\\samson\\Documents\\GitHub\\arazu\\arazu.vs\\arazu.vs\\menues\\11\\12\\NAME.txt";
+			mroom = "D:\\Users\\samsonp\\Documents\\GitHub\\arazu.mai.cpp\\arazu.vs\\arazu.vs\\menues\\11\\12\\NAME.txt";
 			break;
 		case 7:
-			mroom = "C:\\Users\\samson\\Documents\\GitHub\\arazu\\arazu.vs\\arazu.vs\\menues\\11\\12\\RAD.txt";
+			mroom = "D:\\Users\\samsonp\\Documents\\GitHub\\arazu.mai.cpp\\arazu.vs\\arazu.vs\\menues\\11\\12\\RAD.txt";
 			break;
 		case 8:
-			mroom = "C:\\Users\\samson\\Documents\\GitHub\\arazu\\arazu.vs\\arazu.vs\\menues\\11\\12\\SKIN.txt";
+			mroom = "D:\\Users\\samsonp\\Documents\\GitHub\\arazu.mai.cpp\\arazu.vs\\arazu.vs\\menues\\11\\12\\SKIN.txt";
 			break;
 		case 9:
-			mroom = "C:\\Users\\samson\\Documents\\GitHub\\arazu\\arazu.vs\\arazu.vs\\menues\\11\\12\\SOUND.txt";
+			mroom = "D:\\Users\\samsonp\\Documents\\GitHub\\arazu.mai.cpp\\arazu.vs\\arazu.vs\\menues\\11\\12\\SOUND.txt";
 			break;
 		}
 		Interfaceio[ie] = true;
@@ -1233,35 +1232,35 @@ void fileroom(int v_2) {
 		switch (v_2)//инициализация адреса карты
 		{
 		case 1:
-			room = "C:\\Users\\samson\\Documents\\GitHub\\arazu\\arazu.vs\\arazu.vs\\1\\map1.txt";
+			room = "D:\\Users\\samsonp\\Documents\\GitHub\\arazu.mai.cpp\\arazu.vs\\arazu.vs\\1\\map1.txt";
 			break;
 		case 2:
-			room = "C:\\Users\\samson\\Documents\\GitHub\\arazu\\arazu.vs\\arazu.vs\\1\\map2.txt";
+			room = "D:\\Users\\samsonp\\Documents\\GitHub\\arazu.mai.cpp\\arazu.vs\\arazu.vs\\1\\map2.txt";
 			break;
 		case 3:
-			room = "C:\\Users\\samson\\Documents\\GitHub\\arazu\\arazu.vs\\arazu.vs\\1\\end.txt";
+			room = "D:\\Users\\samsonp\\Documents\\GitHub\\arazu.mai.cpp\\arazu.vs\\arazu.vs\\1\\end.txt";
 			break;
 		case 4:
-			room = "C:\\Users\\samson\\Documents\\GitHub\\arazu\\arazu.vs\\arazu.vs\\1\\menue1.txt";
+			room = "D:\\Users\\samsonp\\Documents\\GitHub\\arazu.mai.cpp\\arazu.vs\\arazu.vs\\1\\menue1.txt";
 			break;
 		case 5:
-			room = "C:\\Users\\samson\\Documents\\GitHub\\arazu\\arazu.vs\\arazu.vs\\1\\map3.txt";
+			room = "D:\\Users\\samsonp\\Documents\\GitHub\\arazu.mai.cpp\\arazu.vs\\arazu.vs\\1\\map3.txt";
 			break;
 		case 6:
-			room = "C:\\Users\\samson\\Documents\\GitHub\\arazu\\arazu.vs\\arazu.vs\\1\\map4.txt";
+			room = "D:\\Users\\samsonp\\Documents\\GitHub\\arazu.mai.cpp\\arazu.vs\\arazu.vs\\1\\map4.txt";
 			break;
 		case 7:
-			room = "C:\\Users\\samson\\Documents\\GitHub\\arazu\\arazu.vs\\arazu.vs\\1\\map5.txt";
+			room = "D:\\Users\\samsonp\\Documents\\GitHub\\arazu.mai.cpp\\arazu.vs\\arazu.vs\\1\\map5.txt";
 			break;
 		case 8:
-			room = "C:\\Users\\samson\\Documents\\GitHub\\arazu\\arazu.vs\\arazu.vs\\1\\mob1.txt";
+			room = "D:\\Users\\samsonp\\Documents\\GitHub\\arazu.mai.cpp\\arazu.vs\\arazu.vs\\1\\mob1.txt";
 			//room = "d:\\1\\Loading.txt";
 			break;
 		case 9:
-			room = "C:\\Users\\samson\\Documents\\GitHub\\arazu\\arazu.vs\\arazu.vs\\1\\LABIRINTE.txt";
+			room = "D:\\Users\\samsonp\\Documents\\GitHub\\arazu.mai.cpp\\arazu.vs\\arazu.vs\\1\\LABIRINTE.txt";
 			break;
 		case 10: 
-			room = "C:\\Users\\samson\\Documents\\GitHub\\arazu\\arazu.vs\\arazu.vs\\1\\lastmainmap!.txt";
+			room = "D:\\Users\\samsonp\\Documents\\GitHub\\arazu.mai.cpp\\arazu.vs\\arazu.vs\\1\\lastmainmap!.txt";
 			break;
 		}
 		ifmap = 1;
@@ -1802,6 +1801,7 @@ int main()
 	
 	settings();
 	goy = 0;
+	
 	while (jojo == menue) {
 		system("cls");
 		WatchMenue();
@@ -1812,6 +1812,9 @@ int main()
 		MoveLogic();
 		goy = 0;
 	}
+
+	jojo = game;
+	g = 1;
 
 	while (!gameover)
 	{
